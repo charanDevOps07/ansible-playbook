@@ -1,0 +1,14 @@
+directories
+      ---
+      - hosts: all
+        tasks:
+         - name: create multiple directories at a time
+           file:
+            path: /opt/{{item}}
+             state: directory
+             mode: u=rwx,g=w,o=r
+            with-item:
+              - sum.java
+              - helo.java
+              - charan.core
+
